@@ -38,7 +38,7 @@ export class User extends Model<User> {
   @Column({ field: 'updated_at' })
   updatedAt: Date;
 
-  @Column({ type: DataType.ENUM(Gender.female, Gender.male) })
+  @Column({ type: DataType.ENUM(Gender.female, Gender.male, Gender.gay) })
   gender: Gender;
 
   @Column(DataType.DATEONLY)
