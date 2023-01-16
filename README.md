@@ -32,6 +32,23 @@
 $ npm install
 ```
 
+## Configuration
+
+Create a `.env` file in the root of project:
+
+```dosini
+DATABASE_USER="user"
+DATABASE_PASSWORD="password"
+
+DATABASE_HOST="host"
+DATABASE_PORT=port
+
+DATABASE_NAME="database name"
+DATABASE_DIALECT="dialect"
+
+JWT_KEY="jwtkey"
+```
+
 ## Running the app
 
 ```bash

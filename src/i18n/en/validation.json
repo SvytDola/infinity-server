@@ -1,0 +1,14 @@
+{
+    "IsString": "Should be a String",
+    "IsNotEmpty": "Should not be Empty",
+    "IsUnique": "Already Exists",
+    "MaxLength": "%property should not be Greater than %number.",
+    "MinLength": "%property should not be Less than %number.",
+    "IsNumberString": "Should not Contain Alphabets or Special Characters",
+    "IsPhoneNumber": "Should be a Valid Phone Number",
+    "IsAlpha": "%property should not Contain Numbers or Special Symbols.",
+    "IsEmail": "Should be a Valid Emial Format",
+    "IsStrongPassword": "Should be a strong.",
+    "IsGender": "Gender must be one of the following values: female, male.",
+    "IsBirthday": "Birthday must be a valid ISO 8601 date string."
+}
