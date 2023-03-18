@@ -4,10 +4,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { AuthService } from './auth.service';
 
-import { UsersModule } from '../users/users.module';
+import { UsersModule } from '@modules/users/users.module';
 
-import configuration from '../../config/configuration';
-import { DatabaseModule } from '../../database/database.module';
+import configuration from '@config/configuration';
+import { DatabaseModule } from '@database/database.module';
 
 describe('AuthService', () => {
   let service: AuthService;

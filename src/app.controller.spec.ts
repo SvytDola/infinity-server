@@ -1,6 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -13,6 +14,4 @@ describe('AppController', () => {
 
     appController = app.get<AppController>(AppController);
   });
-
-
 });

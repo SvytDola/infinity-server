@@ -4,8 +4,8 @@ import { UsersService } from './users.service';
 import { usersProviders } from './users.providers';
 import { UsersController } from './users.controller';
 
-import { AuthModule } from '../auth/auth.module';
-import { DatabaseModule } from '../../database/database.module';
+import { AuthModule } from '@modules/auth/auth.module';
+import { DatabaseModule } from '@database/database.module';
 
 @Module({
   imports: [DatabaseModule, forwardRef(() => AuthModule)],

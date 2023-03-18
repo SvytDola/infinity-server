@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { Dialect } from 'sequelize';
 import { Sequelize } from 'sequelize-typescript';
 
-import { User } from '../modules/users/user.entity';
+import { User } from '@modules/users/user.entity';
 
 interface DatabaseConfig {
   host: string;

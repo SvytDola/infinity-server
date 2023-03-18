@@ -1,11 +1,27 @@
-import { ApiQuery, ApiHeader, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { Injectable, Controller, UseGuards, Get, Query, UseInterceptors } from '@nestjs/common';
+import {
+  ApiQuery,
+  ApiHeader,
+  ApiOkResponse,
+  ApiTags,
+  ApiParam,
+} from '@nestjs/swagger';
+import {
+  Injectable,
+  Controller,
+  UseGuards,
+  Get,
+  Query,
+  UseInterceptors,
+  Param,
+} from '@nestjs/common';
+import { ParseIntPipe } from '@nestjs/common/pipes';
+
+import { AuthGuard } from '@guards/auth.guard';
+import { ResponseInterceptor } from '@interceptors/response.interceptor';
 
 import { UsersService } from './users.service';
-import { AuthGuard } from '../../guards/auth.guard';
-import { ParseIntPipe } from '@nestjs/common/pipes';
 import { UserListDto } from './dto/user-list-response.dto';
-import { ResponseInterceptor } from 'src/interceptors/response.interceptor';
+import { UserResponseDto } from './dto/user-response.dto';
 
 @ApiTags('users')
 @ApiHeader({ name: 'authorization', required: true })
@@ -25,5 +41,12 @@ export class UsersController {
     @Query('size', ParseIntPipe) size: number,
   ) {
     return this.usersService.findAll(start, size);
+  }
+
+  @ApiOkResponse({ type: UserResponseDto })
+  @ApiParam({ name: 'id', type: 'string' })
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return this.usersService.getUserById(id);
   }
 }

@@ -4,9 +4,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { usersProviders } from './users.providers';
 import { UsersService } from './users.service';
 
-import { DatabaseModule } from '../../database/database.module';
+import { DatabaseModule } from '@database/database.module';
 
-import configuration from '../../config/configuration';
+import configuration from '@config/configuration';
 
 describe('UsersService', () => {
   let service: UsersService;

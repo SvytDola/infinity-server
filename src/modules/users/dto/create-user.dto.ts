@@ -9,7 +9,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger';
 import { i18nValidationMessage } from 'nestjs-i18n';
 
-import { Gender } from '../../../shared/enum/gender';
+import { Gender } from '@shared/enum/gender';
 
 export class CreateUserDto {
   @ApiProperty()

@@ -5,10 +5,12 @@ import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
 import { UniqueConstraintError } from 'sequelize';
 
-import { User } from '../users/user.entity';
+import { User } from '@modules/users/user.entity';
 
-import { UsersService } from '../users/users.service';
-import { CreateUserDto } from 'src/modules/users/dto/create-user.dto';
+import { UsersService } from '@modules/users/users.service';
+import { CreateUserDto } from '@modules/users/dto/create-user.dto';
+
+
 import { UserLoginRequestDto } from './dto/user-login-request';
 import { UserLoginResponseDto } from './dto/user-login-response';
 import {

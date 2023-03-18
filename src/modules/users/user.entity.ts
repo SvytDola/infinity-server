@@ -8,7 +8,7 @@ import {
   CreatedAt,
   UpdatedAt,
 } from 'sequelize-typescript';
-import { Gender } from '../../shared/enum/gender';
+import { Gender } from '@shared/enum/gender';
 
 @Table({ tableName: 'users' })
 export class User extends Model<User> {

@@ -7,12 +7,13 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 
-import { AuthService } from './auth.service';
+import { CreateUserDto } from '@modules/users/dto/create-user.dto';
+import { ResponseInterceptor } from '@interceptors/response.interceptor';
 
-import { CreateUserDto } from '../users/dto/create-user.dto';
+import { AuthService } from './auth.service';
 import { UserLoginRequestDto } from './dto/user-login-request';
 import { UserLoginResponseDto } from './dto/user-login-response';
-import { ResponseInterceptor } from '../../interceptors/response.interceptor';
+
 
 @UseInterceptors(ResponseInterceptor)
 @Controller('api/auth')

@@ -16,6 +16,16 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@/*": ["src/*"],
+      "@exception/*": ["src/exception/*"],
+      "@shared/*": ["src/shared/*"],
+      "@guards/*": ["src/guards/*"],
+      "@database/*": ["src/database/*"],
+      "@config/*": ["src/config/*"],
+      "@modules/*": ["src/modules/*"],
+      "@interceptors/*": ["src/interceptors/*"]
+    }
   }
 }

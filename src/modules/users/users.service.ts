@@ -1,11 +1,12 @@
 import * as bcrypt from 'bcrypt';
 import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common';
 
-import { UserDto } from './dto/user.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 
 import { User } from './user.entity';
 import { UserListDto } from './dto/user-list-response.dto';
+import { UserWithThisIdNotFound } from './exception/users.exceptions';
+import { UserResponseDto } from './dto/user-response.dto';
 
 @Injectable()
 export class UsersService {
@@ -27,16 +28,14 @@ export class UsersService {
     return new UserListDto(users, usersCount);
   }
 
-  async getUserById(id: string): Promise<UserDto> {
-    const user = await this.usersRepository.findByPk<User>(id);
-
+  async getUserById(id: string): Promise<UserResponseDto> {
+    const user = await this.usersRepository.findByPk<User>(id, {
+      attributes: { exclude: ['email', 'password'] },
+    });
     if (!user) {
-      throw new HttpException(
-        'User with given id not found.',
-        HttpStatus.NOT_FOUND,
-      );
+      throw new UserWithThisIdNotFound();
     }
-    return new UserDto(user);
+    return new UserResponseDto(user);
   }
 
   async getUserByEmail(email: string): Promise<User> {
@@ -50,7 +49,7 @@ export class UsersService {
       password: hash,
       nickname: user.nickname,
       birthday: user.birthday,
-      gender: user.gender,
+      gender: user.gender
     });
     return userData;
   }

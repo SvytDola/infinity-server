@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { I18nService, I18nValidationException } from 'nestjs-i18n';
 
 import { Catch } from '@nestjs/common';
-import { I18nService, I18nValidationException } from 'nestjs-i18n';
 import type { ArgumentsHost, ExceptionFilter } from '@nestjs/common';
 
 @Catch(I18nValidationException)

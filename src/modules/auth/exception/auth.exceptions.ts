@@ -1,5 +1,5 @@
 import { HttpStatus } from '@nestjs/common';
-import { ApiException } from '../../../exception/base.exception';
+import { ApiException } from '@exception/base.exception';
 
 export class InvalidPasswordOrEmail extends ApiException {
   constructor() {
